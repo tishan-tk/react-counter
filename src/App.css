@@ -1,3 +1,4 @@
+/* ---------- Base ---------- */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -37,7 +38,122 @@ h2 {
   margin-top: 30px;
 }
 
-/* Add task row */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.15s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Login / Sign Up ---------- */
+.auth-app {
+  width: 420px;
+  margin-top: 80px;
+}
+
+.auth-app h1 {
+  margin-bottom: 25px;
+}
+
+.auth-box {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-box h2 {
+  margin: 0 0 5px;
+  text-align: center;
+  color: #444;
+  font-size: 20px;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.auth-box input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.switch-auth {
+  margin: 10px 0 0;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.switch-btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+  font-size: 14px;
+}
+
+.switch-btn:hover {
+  background: #eff4ff;
+  opacity: 1;
+}
+
+/* ---------- Top bar (after login) ---------- */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.top-bar h1 {
+  text-align: left;
+  margin: 0;
+  font-size: 24px;
+}
+
+.user-email {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: white;
+  white-space: nowrap;
+}
+
+/* ---------- Add task row ---------- */
 .add-task {
   display: flex;
   gap: 10px;
@@ -57,24 +173,12 @@ h2 {
   border-color: #2563eb;
 }
 
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
 .add-btn {
   background: #2563eb;
   color: white;
 }
 
-/* Task list */
+/* ---------- Task list ---------- */
 .task-item {
   display: flex;
   align-items: center;
@@ -124,4 +228,30 @@ button:hover {
 .empty {
   color: #888;
   text-align: center;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .app {
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .add-task {
+    flex-direction: column;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-buttons {
+    justify-content: flex-end;
+  }
 }
